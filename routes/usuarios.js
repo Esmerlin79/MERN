@@ -4,8 +4,7 @@ const router = express.Router();
 const usuarioController = require('../controllers/usuarioController')
 const { check} = require('express-validator')
 
-// Crear un usuario
-// api/usuarios
+
 router.post('/', 
     [
         check('nombre', 'El nombre es obligatorio').not().isEmpty(),

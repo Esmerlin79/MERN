@@ -5,8 +5,6 @@ const { check } = require('express-validator');
 const auth = require('../middleware/auth');
 
 
-// crea proyectos
-// api/proyectos
 router.post('/', 
     auth,
     [
@@ -14,7 +12,7 @@ router.post('/',
     ],
     proyectoController.crearProyecto
 )
-// obtener todos los proyectos
+
 router.get('/', 
     auth,
     proyectoController.obtenerProyectos

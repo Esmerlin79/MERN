@@ -32,7 +32,6 @@ exports.crearTarea = async (req, res) =>{
     }
 }
 
-//obtiene las tareas por proyectos
 exports.obtenerTareas = async (req, res) =>{
 
     
@@ -58,7 +57,6 @@ exports.obtenerTareas = async (req, res) =>{
     }
 }
 
-//actualizar una tarea
 exports.actualizarTarea = async (req, res) =>{
    
     try {
@@ -87,7 +85,6 @@ exports.actualizarTarea = async (req, res) =>{
         res.status(500).send('Hubo un error')
     }
 }
-//elimina una tarea
 exports.eliminarTarea = async (req, res) =>{
    
     try {

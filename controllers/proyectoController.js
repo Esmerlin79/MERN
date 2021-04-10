@@ -9,13 +9,10 @@ exports.crearProyecto = async (req, res) =>{
     }
 
     try {
-        // crear un nuevo proyecto
+ 
         const proyecto = new Proyecto(req.body)
-
-        //Guardar el creador via jwt
         proyecto.creador = req.usuario.id
 
-        //guardar proyecto
         proyecto.save()
         res.json(proyecto)
 
@@ -25,7 +22,6 @@ exports.crearProyecto = async (req, res) =>{
     }
 }
 
-//obtiene todos los proyectos del usuario actual 
 exports.obtenerProyectos = async (req, res) => {
     try {
         const proyectos = await Proyecto.find({creador: req.usuario.id});
@@ -37,7 +33,6 @@ exports.obtenerProyectos = async (req, res) => {
     }
 }
 
-//actualiza un proyecto
 exports.actualizarProyecto = async (req, res) => {
     
     const errors = validationResult(req)
@@ -74,7 +69,6 @@ exports.actualizarProyecto = async (req, res) => {
     }
 }
 
-//eliminar proyecto
 exports.eliminarProyecto = async (req, res) => {
     
     try {

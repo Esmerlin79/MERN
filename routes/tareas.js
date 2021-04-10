@@ -5,8 +5,6 @@ const { check } = require('express-validator');
 const auth = require('../middleware/auth');
 
 
-// crea una tarea
-// api/tareas
 router.post('/', 
     auth,
     [
@@ -16,17 +14,15 @@ router.post('/',
     tareaController.crearTarea
 );
 
-// obtener las tareas por proyecto
 router.get('/', 
     auth,
     tareaController.obtenerTareas
-)
-// actualizar tarea 
+) 
 router.put('/:id', 
     auth,
     tareaController.actualizarTarea
 )
-//eliminar tarea 
+
 router.delete('/:id', 
     auth,
     tareaController.eliminarTarea
